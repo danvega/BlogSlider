@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blog Slider Plugin Demo</title>
+		
+		<link href="blogslider.css" type="text/css" rel="stylesheet"/>
+		<link href='http://fonts.googleapis.com/css?family=Maiden+Orange' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="blogslider.js"></script> 
+		<script type="text/javascript">
+			$(function(){
+				$(".blogs").show().blogslider();
+			});
+		</script> 
+	</head>
+	<body>
+		
+		<h1>A few of my favorite blogs!</h1>
+		
+		<noscript>
+			<h3>Turn on yer JavaScript biatch!</h3>
+		</noscript>
+		
+		<div class="blogs">
+			
+			<!-- Ben Nadel -->
+			<div class="blog">
+				<a href="http://www.bennadel.com" target="_blank"><img src="images/bennadel.jpg" alt="Ben Nadel"/></a>
+				<a href="#" class="hideme">Hide Description</a>
+				<div class="about">
+					<h2>Ben Nadel</h2>
+					<p>I am the chief software engineer at Epicenter Consulting, a boutique software company in New York City that specializes in developing high-end, customized business solutions using ColdFusion and jQuery.</p>
+				</div>
+			</div>
+			
+			<!-- Ray Camden -->
+			<div class="blog">
+				<a href="http://www.coldfusionjedi.com" target="_blank"><img src="images/raycamden.jpg" alt="Ray Camden"/></a>
+				<a href="#" class="hideme">Hide Description</a>
+				<div class="about">
+					<h2>Ray Camden</h2>
+					<p>My name is Raymond Camden. I'm a 38 year old married father of three living in beautiful Lafayette, Louisiana. I am currently software architect for FirstComp doing ColdFusion. My primary technical focus is on ColdFusion, jQuery, Flex, AIR, and the mobile space.</p>
+				</div>
+			</div>
+
+			<!-- Todd Sharp -->
+			<div class="blog">
+				<a href="http://www.cfsilence.com" target="_blank"><img src="images/toddsharp.jpg" alt="Todd Sharp"/></a>
+				<a href="#" class="hideme">Hide Description</a>
+				<div class="about">
+					<h2>Todd Sharp</h2>
+					<p>Hi! I'm Todd Sharp. I'm happily married with two beautiful children. I don't particulary like talking about myself but figured since you're taking the time out of your busy day to come visit my site that I at least owed you a little bit about me.</p>
+				</div>
+			</div>
+
+			<!-- Scott Stroz -->
+			<div class="blog">
+				<a href="http://www.boyzoid.com" target="_blank"><img src="images/scottstroz.jpg" alt="Scott Stroz"/></a>
+				<a href="#" class="hideme">Hide Description</a>
+				<div class="about">
+					<h2>Scott Stroz</h2>
+					<p>Scott Stroz specializes in developing and deploying enterprise-level web applications, as well as integrating new programming features into older applications to help organizations achieve growth by</p>
+				</div>
+			</div>
+
+			<!-- Andy Matthews -->
+			<div class="blog">
+				<a href="http://www.andymatthews.net" target="_blank"><img src="images/andymatthews.jpg" alt="Andy Matthews"/></a>
+				<a href="#" class="hideme">Hide Description</a>
+				<div class="about">
+					<h2>Andy Matthews</h2>
+					<p>Application developer, database administrator, and project manager in a wide variety of business applications. Experienced in a wide variety of server and client side software and programming languages including Coldfusion, SQL (MySQL, SQL Server), HTML, CSS, Javascript and Actionscript.</p>
+				</div>
+			</div>
+			
+			<!-- navigation -->
+			<div id="bsnavigation">
+				<ul>
+					<li>
+						<a href="images/bennadel.jpg"><img src="images/bennadel_thumb.jpg" alt="Ben Nadel" width="50"/></a>
+						<div class="who">
+							<span class="title">Ben Nadel</span>
+							<p>http://www.bennadel.com</p>
+						</div>
+					</li>
+					<li>
+						<a href="images/raycamden.jpg"><img src="images/raycamden_thumb.jpg" alt="Ray Camden" width="50"/></a>
+						<div class="who">
+							<span class="title">Ray Camden</span>
+							<p>http://coldfusionjedi.com</p>
+						</div>
+					</li>
+					<li>
+						<a href="images/toddsharp.jpg"><img src="images/toddsharp_thumb.jpg" alt="Todd Sharp" width="50"/></a>
+						<div class="who">
+							<span class="title">Todd Sharp</span>
+							<p>http://cfsilence.com</p>
+						</div>
+					</li>
+					<li>
+						<a href="images/scottstroz.jpg"><img src="images/scottstroz_thumb.jpg" alt="Scott Stroz" width="50"/></a>
+						<div class="who">
+							<span class="title">Scott Stroz</span>
+							<p>http://www.boyzoid.com/blog</p>
+						</div>
+					</li>																																		
+					<li>
+						<a href="images/andymatthews.jpg"><img src="images/andymatthews_thumb.jpg" alt="Andy Matthews" width="50"/></a>
+						<div class="who">
+							<span class="title">Andy Matthews</span>
+							<p>http://www.andymatthews.net/</p>
+						</div>
+					</li>	
+				</ul>
+			</div>
+			
+			<div class="clear">&nbsp;</div>
+			
+		</div>
+		
+	</body>
+</html>

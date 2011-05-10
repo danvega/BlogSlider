@@ -1,0 +1,103 @@
+body {
+	background:#666;
+	padding:1em;
+	margin:1em;
+}
+h1,h3 {
+	color:#fff;
+	font-family: 'Chewy', arial, serif;
+}
+
+.blogs {
+	width:900px;
+	height:400px;
+	border:10px solid #999;
+	display:none;
+	-webkit-box-shadow: rgba(0,0,0,.7) 5px 5px 15px;
+	-moz-box-shadow: 5px 5px 10px rgba(0,0,0,.7);
+	box-shadow: 5px 5px 10px rgba(0,0,0,.7);
+}
+
+.blog {
+	width:600px;
+	height:400px;
+	overflow:hidden;
+	float:left;
+	position:relative;
+	display:none;
+}
+
+.about {
+	position:absolute;
+    bottom:0;
+    left:0;
+    width:580px;
+    background: #111;
+    border-top: 1px solid #fff;	
+	color:#fff;
+	opacity: 0.80;
+	padding:10px;
+}
+
+.about h2 {
+	margin-top:0px;
+	font-family: 'Chewy', arial, serif;
+}
+p {
+	margin:0;
+	padding:0;
+}
+.about p {
+	font-family: 'Droid Serif', arial, serif;
+}
+a img {
+	border:none;
+}
+#bsnavigation {
+	width:300px;
+	float:right;
+	height:400px;
+	overflow:hidden;
+}
+#bsnavigation ul {
+	margin:0px;
+	padding:0px;
+	background:#f6f6f6;
+}
+#bsnavigation ul li {
+	list-style-type:none;
+	padding:12px;
+	border-bottom:1px solid #ddd;
+	cursor:pointer;
+	cursor:hand;
+	height:55px;
+	overflow:hidden;
+}
+#bsnavigation ul li:hover, #bsnavigation ul li.active {
+	background:#ddd;
+}
+#bsnavigation ul li.last {
+	border:none;
+}
+
+#bsnavigation .who {
+	float:right;
+	width:200px;
+	font-family: 'Maiden Orange', arial, serif;
+}
+
+.hideme {
+	position:absolute;
+    bottom:0;
+    right:0;
+	z-index:99;
+	background:green;
+	font-family: 'Droid Serif', arial, serif;
+	font-size:13px;
+	padding:2px;
+}
+.hideme:link, .hideme:visited {
+	color:#fff;
+	text-decoration:none;
+}
+.clear {clear:both;}
