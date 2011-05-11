@@ -81,7 +81,7 @@
 	};
 	
 	$.fn.blogslider.defaults = {
-		autoPlay: false,
+		autoPlay: true,
 		slideDelay: 3000
 	};
 		
