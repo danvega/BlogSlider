@@ -12,7 +12,6 @@ h1,h3 {
 	width:900px;
 	height:400px;
 	border:10px solid #999;
-	display:none;
 	-webkit-box-shadow: rgba(0,0,0,.7) 5px 5px 15px;
 	-moz-box-shadow: 5px 5px 10px rgba(0,0,0,.7);
 	box-shadow: 5px 5px 10px rgba(0,0,0,.7);
@@ -101,3 +100,7 @@ a img {
 	text-decoration:none;
 }
 .clear {clear:both;}
+
+/* noscript */
+.js #no-script-warning { display: none }
+.no-js .blogs { display: none }
