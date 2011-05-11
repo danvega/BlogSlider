@@ -9,85 +9,80 @@
 	// PUBLIC FUNCTION ADDED TO THE jQuery.fn Object
 	$.fn.blogslider = function( options ) {
 
-		var timer = null;
-		var aboutEnabled = true;
-		var settings = {autoPlay:true,slideDelay:3000};
+		var timer = null,
+			aboutEnabled = false,
+			
+			// override settings with passed parameters
+			settings  = $.extend( {}, $.fn.blogslider.defaults, options ),
+			
+			blogs     = this.find( ".blog" ),
+			menuItems = this.find( "#bsnavigation li"),
+			hideme    = this.find( ".hideme" ),
+			about     = this.find( ".about" );
 		
-		// override settings with passed parameters
-		if( options ) {$.extend(settings,options);}
+		// show first blog
+		blogs.first().addClass( "current" ).show();
 		
-		var blogs = $('.blog',this);
-		var menuItems = $('#bsnavigation li',this); 
-		
-		// show first blog 
-		$('.blog:first',this).addClass('current').show();
 		// add the active class to the first navigation item
 		menuItems.first().addClass('active');
 		
-		
 		// NAVIGATION ITEMS CLICK EVENT
-		menuItems.live('click',function(e){
+		this.delegate( "#bsnavigation li", 'click', function(e){
 			e.preventDefault();
 			
-			var thisMenuItem = $( this );
-			var image = thisMenuItem.find('a').attr("href");
-			var blog = blogs.find("img[src='" + image + "']").closest('.blog');
+			var thisMenuItem = $( this ),
+				image = thisMenuItem.find('a').attr("href"),
+				blog = blogs.find("img[src='" + image + "']").closest('.blog');
 			
-			// hide all the blogs 
-			blogs.hide();
-			
+			// hide all the blogs and
 			// fade in the current one
+			blogs.not( blog ).hide();
 			blog.fadeIn();
 			
-			menuItems.removeClass('active');
+			// Deselect previou menu, and
+			// select active menu
+			menuItems.not( thisMenuItem ).removeClass('active');
 			thisMenuItem.addClass('active');
 			
-			clearTimeout(timer);
+			if ( e.originalEvent ) {
+				// If the user clicked the menu item, then cancel autoPlay
+				clearInterval(timer);
+			}
 		});
 		
 		
 		// SHOW/HIDE ABOUT	
-		$('.hideme').click(function(e){
-			if( aboutEnabled ){
-				$('.about').slideToggle( "normal", function(){
-					$(this).css('display','none');
-				});
-				$('.hideme').html('Show Description');
-			} else {
-				$('.about').slideToggle();
-				$('.hideme').html('Hide Description');			
-			}
-			aboutEnabled = aboutEnabled ? false : true;
-			return false;
+		hideme.click(function(e){
+			aboutEnabled = !aboutEnabled;
+			
+			about[ aboutEnabled ? "slideUp" : "slideDown"]();
+			hideme.html( aboutEnabled ? "Show Description" : "Hide Description" );
+			
+			e.preventDefault();
 		});	
 		
 		
 		// AUTO PLAY
 		if( settings.autoPlay ) {
 			timer = setInterval(function(){
+				var $next = menuItems.filter(".active").next();
 				
-				for( var i=0; i < blogs.length; ++i){
-					var $current = $(blogs[i]);
-					if( $current.hasClass('current') ){
-						var next = ( i+1 == blogs.length) ? 0 : i+1;
-						var blog = $(blogs[next]);
-													
-						blogs.hide();
-						$current.removeClass('current');
-						blog.fadeIn().addClass('current');
-						
-						// navigation menu
-						menuItems.removeClass('active');
-						$(menuItems[next]).addClass('active');
-						
-						break;								
-					}
-				}
+				if ( !$next.length ) {
+					$next = menuItems.eq(0);
+				};
 				
+				// Reuse the click event to
+				// keep code duplication to a minimum
+				$next.click();
 			}, settings.slideDelay );
 		}
 		
-		return this;		
+		return this;
+	};
+	
+	$.fn.blogslider.defaults = {
+		autoPlay: true,
+		slideDelay: 3000
 	};
 		
 	// PRIVATE METHODS
@@ -97,5 +92,4 @@
 		}
 	}
 	
-})( jQuery )
-
+})( jQuery );
