@@ -64,7 +64,6 @@
 			aboutEnabled = !aboutEnabled;
 			
 			about.slideToggle(function(){
-				console.log(aboutEnabled); 
 				about.css('display',aboutEnabled ? 'inherit' : 'none');
 			});
 			
