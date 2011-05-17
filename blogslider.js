@@ -10,11 +10,9 @@
 	$.fn.blogslider = function( options ) {
 
 		var timer = null,
-			aboutEnabled = false,
-			
 			// override settings with passed parameters
 			settings  = $.extend( {}, $.fn.blogslider.defaults, options ),
-			
+			aboutEnabled = settings.showAboutOnLoad,
 			blogs     = this.find( ".blog" ),
 			menuItems = this.find( "#bsnavigation li"),
 			hideme    = this.find( ".hideme" ),
@@ -25,6 +23,18 @@
 		
 		// add the active class to the first navigation item
 		menuItems.first().addClass('active');
+		
+		// set text for hideme 
+		hideme.html(aboutEnabled ? 'Hide Description' : 'Show Description');
+		
+		/*
+		 * by default we hide the about section. The user can override this setting
+		 * using the showAboutOnLoad configuration setting. If they pass in true then
+		 * we need to call show because the css for .about is set to display:none
+		 */
+		if( aboutEnabled ){
+			about.show();
+		}
 		
 		// NAVIGATION ITEMS CLICK EVENT
 		this.delegate( "#bsnavigation li", 'click', function(e){
@@ -39,8 +49,7 @@
 			blogs.not( blog ).hide();
 			blog.fadeIn();
 			
-			// Deselect previou menu, and
-			// select active menu
+			// deselect previous menu, and select active menu
 			menuItems.not( thisMenuItem ).removeClass('active');
 			thisMenuItem.addClass('active');
 			
@@ -50,17 +59,19 @@
 			}
 		});
 		
-		
 		// SHOW/HIDE ABOUT	
 		hideme.click(function(e){
 			aboutEnabled = !aboutEnabled;
 			
-			about[ aboutEnabled ? "slideUp" : "slideDown"]();
+			about.slideToggle(function(){
+				console.log(aboutEnabled); 
+				about.css('display',aboutEnabled ? 'inherit' : 'none');
+			});
+			
 			hideme.html( aboutEnabled ? "Show Description" : "Hide Description" );
 			
 			e.preventDefault();
 		});	
-		
 		
 		// AUTO PLAY
 		if( settings.autoPlay ) {
@@ -82,14 +93,8 @@
 	
 	$.fn.blogslider.defaults = {
 		autoPlay: true,
-		slideDelay: 3000
+		slideDelay: 3000,
+		showAboutOnLoad: false
 	};
-		
-	// PRIVATE METHODS
-	function trace(o){
-		if (this.console && typeof console.log != "undefined") {
-			console.log(o);
-		}
-	}
 	
 })( jQuery );

@@ -8,11 +8,13 @@
 		<link href='http://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 	
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script type="application/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="blogslider.js"></script> 
 		<script type="text/javascript">			
 			$(function(){
-				$(".blogs").blogslider();
+				$(".blogs").blogslider({
+					showAboutOnLoad:true
+				});
 			});
 		</script> 
 	</head>
@@ -25,7 +27,7 @@
 			<!-- Ben Nadel -->
 			<div class="blog">
 				<a href="http://www.bennadel.com" target="_blank"><img src="images/bennadel.jpg" alt="Ben Nadel"/></a>
-				<a href="#" class="hideme">Hide Description</a>
+				<a href="#" class="hideme"></a>
 				<div class="about">
 					<h2>Ben Nadel</h2>
 					<p>I am the chief software engineer at Epicenter Consulting, a boutique software company in New York City that specializes in developing high-end, customized business solutions using ColdFusion and jQuery.</p>
@@ -35,7 +37,7 @@
 			<!-- Ray Camden -->
 			<div class="blog">
 				<a href="http://www.coldfusionjedi.com" target="_blank"><img src="images/raycamden.jpg" alt="Ray Camden"/></a>
-				<a href="#" class="hideme">Hide Description</a>
+				<a href="#" class="hideme"></a>
 				<div class="about">
 					<h2>Ray Camden</h2>
 					<p>My name is Raymond Camden. I'm a 38 year old married father of three living in beautiful Lafayette, Louisiana. I am currently software architect for FirstComp doing ColdFusion. My primary technical focus is on ColdFusion, jQuery, Flex, AIR, and the mobile space.</p>
@@ -45,7 +47,7 @@
 			<!-- Todd Sharp -->
 			<div class="blog">
 				<a href="http://www.cfsilence.com" target="_blank"><img src="images/toddsharp.jpg" alt="Todd Sharp"/></a>
-				<a href="#" class="hideme">Hide Description</a>
+				<a href="#" class="hideme"></a>
 				<div class="about">
 					<h2>Todd Sharp</h2>
 					<p>Hi! I'm Todd Sharp. I'm happily married with two beautiful children. I don't particulary like talking about myself but figured since you're taking the time out of your busy day to come visit my site that I at least owed you a little bit about me.</p>
@@ -55,7 +57,7 @@
 			<!-- Scott Stroz -->
 			<div class="blog">
 				<a href="http://www.boyzoid.com" target="_blank"><img src="images/scottstroz.jpg" alt="Scott Stroz"/></a>
-				<a href="#" class="hideme">Hide Description</a>
+				<a href="#" class="hideme"></a>
 				<div class="about">
 					<h2>Scott Stroz</h2>
 					<p>Scott Stroz specializes in developing and deploying enterprise-level web applications, as well as integrating new programming features into older applications to help organizations achieve growth by</p>
@@ -65,7 +67,7 @@
 			<!-- Andy Matthews -->
 			<div class="blog">
 				<a href="http://www.andymatthews.net" target="_blank"><img src="images/andymatthews.jpg" alt="Andy Matthews"/></a>
-				<a href="#" class="hideme">Hide Description</a>
+				<a href="#" class="hideme"></a>
 				<div class="about">
 					<h2>Andy Matthews</h2>
 					<p>Application developer, database administrator, and project manager in a wide variety of business applications. Experienced in a wide variety of server and client side software and programming languages including Coldfusion, SQL (MySQL, SQL Server), HTML, CSS, Javascript and Actionscript.</p>
